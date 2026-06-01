@@ -124,6 +124,8 @@
     const s=document.getElementById('scrollTop');
     window.addEventListener('scroll',()=>s.classList.toggle('visible',window.scrollY>400));
     s.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.15});
+    document.querySelectorAll('.service-card,.why-point,.cert-card').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=(i%4)*.1+'s';ro.observe(el);});
   </script>
 </body>
 </html>

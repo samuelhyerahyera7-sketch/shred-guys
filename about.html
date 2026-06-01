@@ -61,6 +61,25 @@
     </div>
   </section>
 
+  <!-- Split Photo -->
+  <div class="split-section">
+    <div class="split-content dark">
+      <div class="section-label">Our Promise</div>
+      <h2 class="section-title">Secure. Compliant. Eco-Friendly.</h2>
+      <p style="margin-top:14px">We treat every client's documents with the same level of care and discretion — regardless of the volume. From a single lever arch file to a 10-bin office purge, the process is the same: sealed, tracked, witnessed, and certified.</p>
+      <div style="margin-top:32px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:12px;color:#c9d3e8;font-size:15px"><svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sealed, tamper-evident bins from the moment of collection</div>
+        <div style="display:flex;align-items:center;gap:12px;color:#c9d3e8;font-size:15px"><svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>DIN P-4 cross-cut security standard for off-site shredding</div>
+        <div style="display:flex;align-items:center;gap:12px;color:#c9d3e8;font-size:15px"><svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Certificate of Destruction emailed same day</div>
+        <div style="display:flex;align-items:center;gap:12px;color:#c9d3e8;font-size:15px"><svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>100% of shredded material goes to recycling — zero landfill</div>
+      </div>
+    </div>
+    <div class="split-photo">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Professional business team in a modern office" />
+      <div class="split-photo-overlay"></div>
+    </div>
+  </div>
+
   <!-- Certificate of Destruction -->
   <section class="certificate">
     <div class="cert-of-dest">
@@ -144,6 +163,8 @@
     const s=document.getElementById('scrollTop');
     window.addEventListener('scroll',()=>s.classList.toggle('visible',window.scrollY>400));
     s.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.15});
+    document.querySelectorAll('.service-card,.step,.testimonial-card,.why-point,.cert-card,.comp-badge,.cert-point').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=(i%4)*.1+'s';ro.observe(el);});
   </script>
 </body>
 </html>
