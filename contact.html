@@ -138,7 +138,7 @@
       btn.textContent='Sending…';btn.disabled=true;
       try{
         const res=await fetch('https://lhrdunranqragptqouan.supabase.co/functions/v1/shredguys-contact',{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json',Accept:'application/json'}});
-        if(res.ok){btn.textContent="Thank you! We'll be in touch within one business day.";btn.style.background='#15803d';}
+        if(res.ok){window.location.href='thankyou.html';}
         else{btn.textContent='Something went wrong — please call us.';btn.style.background='#dc2626';btn.disabled=false;}
       }catch{btn.textContent='Something went wrong — please call us.';btn.style.background='#dc2626';btn.disabled=false;}
     }
