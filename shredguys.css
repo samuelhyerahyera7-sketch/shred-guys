@@ -46,7 +46,7 @@ ul { list-style: none; }
 header { background: #fff; border-bottom: 2px solid var(--orange); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1160px; margin: 0 auto; height: 72px; }
 .logo { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 800; color: var(--navy); }
-.logo-icon { width: 46px; height: 46px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.logo-icon { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; }
 .logo span.highlight { color: var(--orange); }
 nav { display: flex; align-items: center; gap: 4px; }
 .nav-link { padding: 8px 14px; font-size: 14px; font-weight: 600; color: var(--navy); border-radius: 5px; transition: background .15s, color .15s; }
